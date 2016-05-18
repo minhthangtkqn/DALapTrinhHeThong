@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://arduino.vn/bai-viet/209-dieu-khien-toc-do-motor-dc -->
+<html lang="vi" dir="ltr" prefix="fb: http://www.facebook.com/2008/fbml content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#" class="js"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!--[if IE]><![endif]-->
+
+<link http-equiv="x-dns-prefetch-control" content="on">
+<link rel="dns-prefetch" href="http://cdn.arduino.vn/">
+<!--[if IE 9]>
+<link rel="prefetch" href="//cdn.arduino.vn" />
+<![endif]-->
+<link rel="shortlink" href="http://arduino.vn/node/209">
+<meta name="Generator" content="Drupal 7 (http://drupal.org)">
+<link rel="canonical" href="http://arduino.vn/bai-viet/209-dieu-khien-toc-do-motor-dc">
+<link rel="shortcut icon" href="http://cdn.arduino.vn/sites/default/files/favicon.png" type="image/png">
+  <title>Điều khiển tốc độ Motor DC | Cộng đồng Arduino Việt Nam</title>
+
+      <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="cleartype" content="on">
+
+  <link type="text/css" rel="stylesheet" href="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/css__X6W0K0JSQGvPkFcQ2QonxAofJI-_QPXj5A49HXFvw94__dodcGVyXNZXx4vuE6mdk5agwIpBNFU6T_irR-uDAZmc__gKKny14knGkPO1wqMaKVkqFnyCjZtD9XxPOoRYBAlpU.css" media="all">
+  <script type="text/javascript" defer="" async="" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/piwik.js"></script><script src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/js__UiO29A8qiU-liB_96gCC8E9JKDzRn317nHrd6s0stps__JjoPzCkzYa71IxBF0sXb6yVSB5ojjxYZ6gppRP-xCds__gKKny14knGkPO1wqMaKVkqFnyCjZtD9XxPOoRYBAlpU.js"></script>
+<script src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/js__nok8G7hcnetIw76kyOWGSjfV7ZbfyfFwm807kxsEXGI__BaEwjj6wscfXL9ZDWHeXT4eowghF20sqLavOStFRjgc__gKKny14knGkPO1wqMaKVkqFnyCjZtD9XxPOoRYBAlpU.js" defer="defer"></script>
+<script src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/js__ncCQGCXctueOR1Dsq3gY-b0gaIYrZi_UKIh5SvAqXys__Z6TDkSiQ1pj9LAkGCXfPg_kLlGI8kdFKBHgZsNeqmf4__gKKny14knGkPO1wqMaKVkqFnyCjZtD9XxPOoRYBAlpU.js"></script>
+<script src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/js__bzh0uY3h0wP16p2vug7GVZc8YwQII2MvMdP74GgvZU4__29hprtUJjUrYFd0x57Qa4s7jvCu9CPbbzQPyX0FxplE__gKKny14knGkPO1wqMaKVkqFnyCjZtD9XxPOoRYBAlpU.js" defer="defer"></script>
+<script src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/js__JW_cgJ9CfAlxsyKh-U6ZoRd2OCHGTjDpyoTxQmIdXuY__K3Qjzt-xNLYtApv14NMHrzH6SPEZH1cHkUw-ira6tL0__gKKny14knGkPO1wqMaKVkqFnyCjZtD9XxPOoRYBAlpU.js"></script>
+<script>var _paq = _paq || [];(function(){var u=(("https:" == document.location.protocol) ? "" : "http://ad.masocongty.vn/");_paq.push(["setSiteId", "2"]);_paq.push(["setTrackerUrl", u+"piwik.php"]);_paq.push(["trackPageView"]);_paq.push(["setIgnoreClasses", ["no-tracking","colorbox"]]);_paq.push(["enableLinkTracking"]);var d=document,g=d.createElement("script"),s=d.getElementsByTagName("script")[0];g.type="text/javascript";g.defer=true;g.async=true;g.src=u+"piwik.js";s.parentNode.insertBefore(g,s);})();</script>
+<script src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/js__fHrG69Qe0kZS5lrDXZJqClsvFdZxLolB0AKnoBmJ7bc__uHe2pNmhmNKCDcg65s7LMMsZMwr5o9rglRQCbwbI5M0__gKKny14knGkPO1wqMaKVkqFnyCjZtD9XxPOoRYBAlpU.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"ktheme","theme_token":"tPh__FyzEp-2HbOiPu1jfL2evn24WqG1eWhsKrwbAdo","jquery_version":"default","css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/ldap\/ldap_user\/ldap_user.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/field_hidden\/field_hidden.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/fbconnect\/fbconnect.css":1,"sites\/all\/modules\/ldap\/ldap_servers\/ldap_servers.admin.css":1,"sites\/all\/modules\/rate\/rate.css":1,"sites\/default\/files\/sl_sprites.css":1,"sites\/all\/modules\/rate\/templates\/thumbs-up\/thumbs-up.css":1,"sites\/all\/modules\/path_breadcrumbs\/css\/path_breadcrumbs.css":1,"sites\/all\/themes\/ktheme\/css\/theme-A.css":1,"sites\/all\/themes\/ktheme\/css\/tooltips.css":1,"sites\/all\/libraries\/superfish\/css\/superfish.css":1,"sites\/all\/libraries\/superfish\/style\/ktheme.css":1,"sites\/all\/themes\/ktheme\/system.menus.css":1,"sites\/all\/themes\/ktheme\/system.messages.css":1,"sites\/all\/themes\/ktheme\/system.theme.css":1,"sites\/all\/themes\/ktheme\/css\/styles.css":1,"sites\/all\/modules\/prettify\/styles\/googlecode.css":1},"js":{"modules\/statistics\/statistics.js":1,"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/libraries\/google-code-prettify\/prettify.js":1,"sites\/all\/libraries\/google-code-prettify\/lang-css.js":1,"misc\/jquery.cookie.js":1,"misc\/jquery.form.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/jquery_update\/js\/jquery_update.js":1,"public:\/\/languages\/vi_93a90fQN-FyrA-_Ia5ssjsDkf9U1IfsIqx_3tJYrNm4.js":1,"sites\/all\/modules\/fbconnect\/fbconnect.js":1,"sites\/all\/modules\/prettify\/prettify.loader.js":1,"sites\/all\/modules\/rate\/rate.js":1,"sites\/all\/modules\/piwik\/piwik.js":1,"sites\/all\/modules\/disqus\/disqus.js":1,"sites\/all\/modules\/views\/js\/base.js":1,"misc\/progress.js":1,"sites\/all\/modules\/views\/js\/ajax_view.js":1,"sites\/all\/libraries\/superfish\/jquery.hoverIntent.minified.js":1,"sites\/all\/libraries\/superfish\/sfsmallscreen.js":1,"sites\/all\/libraries\/superfish\/supposition.js":1,"sites\/all\/libraries\/superfish\/superfish.js":1,"sites\/all\/libraries\/superfish\/supersubs.js":1,"sites\/all\/modules\/superfish\/superfish.js":1,"sites\/all\/themes\/ktheme\/js\/jquery.js":1,"sites\/all\/themes\/ktheme\/js\/phpjs.js":1,"sites\/all\/themes\/ktheme\/js\/ktheme.js":1}},"fbconnect":{"user_pictures":"disallow","language_code":"vi_VN","app_id":"1424185567850442","debug":0,"connect_js":"document.location.protocol + \u0027\/\/connect.facebook.net\/vi_VN\/all.js\u0027","loginout_mode":"manual","invite_name":"C\u1ed9ng \u0111\u1ed3ng Arduino Vi\u1ec7t Nam","fast_reg_mode":1,"fast_reg_autoname":1,"fbuid":0,"user":{"uid":0,"fbuid":null}},"prettify":{"linenums":false,"match":".content,#content","nocode":"no-code","custom":[],"markup":{"code":true,"pre":true,"precode":false}},"rate":{"basePath":"\/rate\/vote\/js","destination":"node\/209"},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:e2ae79b0680d044dae973537039496df":{"view_name":"tips","view_display_id":"block","view_args":"","view_path":"node\/333","view_base_path":null,"view_dom_id":"e2ae79b0680d044dae973537039496df","pager_element":0},"views_dom_id:bb538d18c93476edd6a0bc5319d1c391":{"view_name":"b_i_li_n_quan","view_display_id":"block","view_args":"209\/92+99+44+100+109+101+61+56+27","view_path":"node\/209","view_base_path":null,"view_dom_id":"bb538d18c93476edd6a0bc5319d1c391","pager_element":0},"views_dom_id:d97a2a520e27482c28bb7cd4ec4dd6ff":{"view_name":"inspire_project_views","view_display_id":"block","view_args":"209","view_path":"node\/209","view_base_path":null,"view_dom_id":"d97a2a520e27482c28bb7cd4ec4dd6ff","pager_element":0}}},"piwik":{"trackMailto":1},"urlIsAjaxTrusted":{"\/bai-viet\/209-dieu-khien-toc-do-motor-dc":true,"\/bai-viet\/209-dieu-khien-toc-do-motor-dc?destination=node\/209":true},"statistics":{"data":{"nid":"209"},"url":"\/modules\/statistics\/statistics.php"},"disqus":{"domain":"arduinovnn","url":"http:\/\/arduino.vn\/bai-viet\/209-dieu-khien-toc-do-motor-dc","title":"\u0110i\u1ec1u khi\u1ec3n t\u1ed1c \u0111\u1ed9 Motor DC","identifier":"node\/209","language":"vi","sso":{"name":"C\u1ed9ng \u0111\u1ed3ng Arduino Vi\u1ec7t Nam","url":"http:\/\/arduino.vn\/user\/login?destination=disqus\/closewindow","logout":"http:\/\/arduino.vn\/user\/logout?destination=node\/209","width":800,"height":600,"button":"\/\/cdn.arduino.vn\/sites\/default\/files\/images\/logo_3.png","icon":"\/\/cdn.arduino.vn\/sites\/default\/files\/favicon.png"},"api_key":"HYyUbnayRKyvJXL3JDIMXGwU073P5OvZt0TYdVd7urTp4SQGmjwJqKULyc2Oeow3","remote_auth_s3":"W10= 6362147b24ea605bdc2d653323f29f71427c8298 1463497100"},"superfish":{"1":{"id":"1","sf":{"delay":"10","animation":{"opacity":"show","height":"show"},"speed":10,"autoArrows":true,"dropShadows":true,"disableHI":false},"plugins":{"smallscreen":{"mode":"window_width","addSelected":false,"menuClasses":false,"hyperlinkClasses":false,"title":"Main menu"},"supposition":true,"bgiframe":false,"supersubs":{"minWidth":"12","maxWidth":"27","extraWidth":1}}}}});</script>
+      <!--[if lt IE 9]>
+    <script src="/sites/all/themes/zen/js/html5-respond.js"></script>
+    <![endif]-->
+  <style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style><script src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/alfie.f51946af45e0b561c60f768335c9eb79.js" async="" charset="UTF-8"></script></head>
+<body class="html not-front not-logged-in one-sidebar sidebar-second page-node page-node- page-node-209 node-type-article section-bai-viet disqus-processed" data-pinterest-extension-installed="cr1.39.1"><div id="_AF_HSS_extension_installed" style="display: none !important;"></div>
+      <p id="skip-link">
+      <a href="http://arduino.vn/bai-viet/209-dieu-khien-toc-do-motor-dc#main-menu" class="element-invisible element-focusable">Jump to navigation</a>
+    </p>
+      
+<script type="text/javascript">
+	if(self != top) { top.location = self.location; }
+	$(document).ready(function(){
+		$('.block-nice-menus > div').length > 0 ? '' : $('.block-nice-menus').attr('style','display:none;');
+		
+	});
+	$(window).bind('scroll', function() {
+	     if ($(window).scrollTop() > 150) {
+	         $('div#navigation').addClass('fixed');
+	          $('#menuWings').show();
+	     }
+	     else {
+	         $('div#navigation').removeClass('fixed');
+	         $('#menuWings').hide();
+	     }
+	});
+</script>
+
+<div class="fixed" id="menuWings" style="display: block;"></div>
+<div id="divHeader">&nbsp;</div>
+<div id="page">
+  
+  <header class="header" id="header" role="banner">
+
+          <a href="http://arduino.vn/" title="Nhà" rel="home" class="header__logo" id="logo" style="background: url(&#39;//cdn.arduino.vn/sites/all/themes/ktheme/logo.png?2&#39;) no-repeat scroll 0 0 rgba(0, 0, 0, 0);    margin-top: -30px;border: medium none;color: #FFFFFF;display: block;height: 120px;text-indent: -9999em;width: 120px;margin-right: 27px;">Nhà</a>
+    
+          <div class="header__name-and-slogan" id="name-and-slogan">
+                  <h1 class="header__site-name" id="site-name">
+            <a href="http://arduino.vn/" title="Nhà" class="header__site-link" rel="home"><span>Cộng đồng  Việt Nam</span></a>
+          </h1>
+        
+              </div>
+    
+    
+      <div class="header__region region region-header">
+    <div id="block-search-form" class="block block-search first last odd" role="search">
+
+      
+  <form action="http://arduino.vn/bai-viet/209-dieu-khien-toc-do-motor-dc" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Biểu mẫu tìm kiếm</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Tìm kiếm </label>
+ <input title="Nhập điều kiện tìm kiếm." type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Tìm kiếm" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-uyHG9jvDiQ9Wf1gfen9qBKliXvA-_7uWexEP_3HVv3U">
+<input type="hidden" name="form_id" value="search_block_form">
+</div>
+</div></form>
+</div>
+  </div>
+
+  </header>
+  
+  <div id="main">
+	    <div id="content" class="column column-not-in-frontpage" role="main">
+            <h2 class="element-invisible">Bạn đang ở đây</h2><div class="breadcrumb"><div class="inline odd first" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://arduino.vn/" itemprop="url"><span itemprop="title">Arduino.vn</span></a></div> <span class="delimiter">»</span> <div class="inline even last" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://arduino.vn/dien-tu-co-ban" itemprop="url"><span itemprop="title">Điện tử cơ bản</span></a></div></div>      <a id="main-content"></a>
+                    <h1 class="page__title title" id="page-title">Điều khiển tốc độ Motor DC</h1>
+                                          
+
+
+<article class="node-209 not-in-frontpage node node-article node-promoted view-mode-full clearfix" about="/bai-viet/209-dieu-khien-toc-do-motor-dc" typeof="sioc:Item foaf:Document">
+
+      <header>
+                  <span property="dc:title" content="Điều khiển tốc độ Motor DC" class="rdf-meta element-hidden"></span>
+              <p class="submitted">
+                    <span property="dc:date dc:created" content="2014-06-23T19:53:25+07:00" datatype="xsd:dateTime" rel="sioc:has_creator"><a href="http://arduino.vn/users/ntppro" title="Xem hồ sơ người dùng." class="username" xml:lang="" about="/users/ntppro" typeof="sioc:UserAccount" property="foaf:name" datatype="">NTP_PRO</a> gửi vào <time pubdate="" datetime="2014-06-23T19:53:25+07:00">Thứ hai, 23 Tháng 6, 2014 - 19:53</time></span>        </p>
+      
+          </header>
+  
+  <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><p>Chào các bạn, bài viết này sẽ hướng dẫn các bạn cách ứng dụng Transistor và Diode để điều khiển động cơ DC, rơ le.</p>
+<h2><span style="color:#FF8C00"><strong>Nội dung</strong></span></h2>
+<ul>
+<li>Các đặc tính của&nbsp;<em><strong>Transistor </strong></em>và <em><strong>Diode</strong></em>.</li>
+<li>Lập trình Arduino để điều khiển tốc độ động cơ DC với <a href="http://arduino.vn/bai-viet/153-bai-8-dung-button-nut-bam-de-dieu-khien-mot-den-led">nút bấm (button)</a>.</li>
+</ul>
+<h2><span style="color:#FF8C00"><strong>Phần cứng</strong></span></h2>
+<ul>
+<li><a href="http://arduino.vn/bai-viet/42-arduino-uno-r3">Arduino UNO</a>.</li>
+<li>1 động cơ DC (<a href="http://k1.arduino.vn/img/2014/06/23/0/635_1231-1403532469-0-20955331.jpg" target="_blank">loại 9V</a>).</li>
+<li>2 <a href="http://k2.arduino.vn/img/2014/06/14/0/550_8821-1402725146-0-prtscr-capture.jpg" target="_blank">tụ 100nF</a>&nbsp;(tụ gốm 101).</li>
+<li>1 Transistor NPN.(loại&nbsp;<a href="http://k2.arduino.vn/img/2014/06/23/0/583_8821-1403532632-0-transistor-2n2222.jpg-jpeg-image-600-x-600-pixels---mozilla-firefox.jpg" target="_blank">N2222</a>).</li>
+<li>Điện trở <a href="http://k3.arduino.vn/img/2014/05/27/0/484_8121-1401207819-0-1-kiloohm-5-axial-resistor.750x500.jpg" target="_blank">1k</a>&nbsp;ohm và <a href="http://k3.arduino.vn/img/2014/05/27/0/483_8121-1401207588-0-10k-resistor-500x500.jpg" target="_blank">10k</a>&nbsp;ohm.</li>
+<li>1 <a href="http://k2.arduino.vn/img/2014/06/09/0/529_8821-1402280247-0-button2.jpg-jpeg-image-800-x-773-pixels---da-chnh-t-l-80---mozilla-firefox.jpg">nút bấm</a>&nbsp;(button).</li>
+<li>1 Diode. (loại&nbsp;<a href="http://k3.arduino.vn/img/2014/06/23/0/582_8121-1403532793-0-1n4007.jpg-jpeg-image-536-x-223-pixels---mozilla-firefox.jpg" target="_blank">N4007</a>).</li>
+<li><a href="http://k1.arduino.vn/img/2014/05/28/0/517_1231-1401211379-0--breadboard.jpg" target="_blank">Breadboard</a> và <a href="http://machtudong.vn/image/cache/data/dung-cu-khac/cap/breadboard-cable-65-500x500.jpg" target="_blank">dây dẫn</a>.</li>
+</ul>
+<h2><span style="color:#FF8C00"><strong>Giới thiệu linh kiện</strong></span></h2>
+<h3><strong>Transistor</strong></h3>
+<p><em><strong>Transistor </strong></em>là 1 linh kiện cho phép chúng ta điều khiển dòng điện có cường độ lớn hơn mức cho phép của Arduino (tối đa <strong>40mA </strong>mỗi chân Digital).</p>
+<p><strong><em>Cấu tạo</em></strong></p>
+<ul>
+<li>Gồm ba lớp bán dẫn ghép với nhau hình thành hai mối&nbsp;tiếp giáp P-N.</li>
+<li>Ba lớp bán dẫn được nối ra thành ba cực:
+<ul>
+<li>Lớp giữa gọi là cực gốc hay cực nền (<strong>Base</strong>) ký&nbsp;hiệu là B.</li>
+<li>Hai lớp bán dẫn bên ngoài được nối ra thành cực&nbsp;phát (<strong>Emitter</strong>) ký hiệu là E và cực thu hay cực&nbsp;góp (<strong>Collector</strong>) ký hiệu là C.</li>
+</ul>
+</li>
+</ul>
+<p>Có 2 loại <em><strong>Transistor </strong></em>là&nbsp;<strong>PNP</strong> và <strong>NPN </strong>tương ứng với 2 cách sắp xếp 3 lớp bán dẫn. Trong bài này mình sử dụng Transistor loại&nbsp;<strong>NPN </strong>là<em><strong> &nbsp;N2222</strong></em>.</p>
+<p class="rtecenter"><img alt="" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/577_81281-1403521584-0-1379.jpg" style="border-style:solid; border-width:1px"></p>
+<p>Mỗi loại Transistor có sơ đồ chân khác nhau, do đó, khi sử dụng 1 loại Transistor nào đó (VD:C1815, BC548...) bạn nên tìm đọc datasheet của nó (trên google)&nbsp;để sử dụng chính xác.</p>
+<p><strong><em>Nguyên lý hoạt động</em></strong></p>
+<p>Để đơn giản, chúng ta xem Transistor như 1 công tắc bình thường. Đối với Transistor NPN, khi một dòng điện có cường độ nhỏ (như chân digital của Arduino) được cấp vào chân Base, Transistor sẽ cho phép dòng điện đi từ chân Collector đến chân Emitter (theo chiều mũi tên trên kí hiệu). Khi chân Base không còn được cấp điện (ở mức LOW), sẽ không có dòng điện chạy qua transitsor.</p>
+<blockquote><p><span style="color:#006400">Bạn có thể xem giới thiệu đầy đủ hơn về linh kiện này tại bài viết&nbsp;</span><strong><a href="http://arduino.vn/bai-viet/167-transistor-bjt"><span style="color:#006400">Transistor (BJT)</span></a></strong></p>
+</blockquote>
+<h3><strong>Diode (đi-ốt)</strong></h3>
+<p class="rtecenter"><img alt="" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/629_12381-1403524178-0-rectifier-diodes-1n4001-1n4007-.jpg" style="border-style:solid; border-width:1px"></p>
+<p class="rtecenter"><img alt="" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/577_88281-1403524211-0-fw3ryjjga0o8t9c.medium.jpg" style="border-style:solid; border-width:1px; height:300px; width:446px"></p>
+<p><em><strong>Diode </strong></em>là 1 linh kiện rất đơn giản, nó chỉ cho phép dòng điện đi qua theo 1 chiều (từ anot đến catot).</p>
+<p>Trong bài viết này mình sử dụng Diode <strong>N4007 </strong>để bảo vệ các linh kiện trong mạch khỏi bị hư hỏng do dòng điện cảm ứng phát sinh khi motor, rơle, ...hoạt động. Dòng điện cảm ứng&nbsp;có chiều ngược với chiều dòng điện trong mạch, do đó gây hại cho các thiết bị điện trong mạch vốn chỉ hoạt động với một chiều dòng điện nhất định.</p>
+<h2><span style="color:#FF8C00"><strong>Ứng dụng Transistor và Diode</strong></span></h2>
+<p>Chúng ta sẽ sử dụng <em><strong>Transistor </strong></em>và <em><strong>Diode </strong></em>để điều khiển motor DC vì:</p>
+<ul>
+<li>Chip vi điều khiển trên Arduino chỉ có thể cung cấp dòng điện tối đa <strong>40mA </strong>trên mỗi chân Digital - nhỏ hơn yêu cầu của hầu hết motor.</li>
+<li>Khi hoạt động, motor sẽ tạo ra dòng điện cảm ứng (do hiện tượng cảm ứng điện từ) có chiều ngược với chiều dòng điện trong mạch. Do đó ta phải sử dụng Diode để triệt tiêu nó.</li>
+</ul>
+<h2><span style="color:#FF8C00"><strong>Lắp mạch</strong></span></h2>
+<p class="rtecenter"><a href="http://k3.arduino.vn/img/2014/06/23/0/578_81281-1403525011-0-untitled-sketch-bb.jpg" target="_blank"><img alt="" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/584_8821-1403533045-0-578-81281-1403525011-0-untitled-sketch-bb.750x823.jpg" style="border-style:solid; border-width:1px; height:713px; width:650px"></a></p>
+<p class="rtecenter"><a href="http://k1.arduino.vn/img/2014/06/23/0/631_12381-1403525359-0-untitled-sketch-schem.jpg" target="_blank"><img alt="" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/637_1231-1403533113-0-631-12381-1403525359-0-untitled-sketch-schem.750x469.jpg" style="height:469px; width:750px"></a></p>
+<blockquote><ul>
+<li>Bạn có thể thay tụ 101 (C1,C2) bằng các loại tụ điện khác tương đương như 102,103,104,...</li>
+<li>Bạn có thể thay diode 1N4001 bằng các loại diode có chức năng tương đương.</li>
+<li>Các điện trở có thể thay bằng những điện trở khác có trị số gần bằng.</li>
+</ul>
+</blockquote>
+<h2><span style="color:#FF8C00"><strong>Lập trình</strong></span></h2>
+<pre data-pbcklang="" data-pbcktabsize="" class="prettyprint prettyprinted"><span class="kwd">const</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> motor </span><span class="pun">=</span><span class="pln"> </span><span class="lit">6</span><span class="pun">;</span><span class="pln">    </span><span class="com">// khai báo chân PWM điều khiển motor</span><span class="pln">
+</span><span class="kwd">const</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> button </span><span class="pun">=</span><span class="pln"> </span><span class="lit">8</span><span class="pun">;</span><span class="pln">   </span><span class="com">// khai báo chân đọc nút bấm</span><span class="pln">
+</span><span class="kwd">boolean</span><span class="pln"> oldState </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">   </span><span class="com">// trạng thái của nút bấm</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> time</span><span class="pun">;</span><span class="pln">               </span><span class="com">// biến lưu thời gian</span><span class="pln">
+</span><span class="kwd">boolean</span><span class="pln"> state </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">int</span><span class="pln"> speedMotor </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">     </span><span class="com">// biến lưu giữ tốc độ của motor</span><span class="pln">
+
+</span><span class="kwd">void</span><span class="pln"> setup</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="typ">Serial</span><span class="pun">.</span><span class="kwd">begin</span><span class="pun">(</span><span class="lit">9600</span><span class="pun">);</span><span class="pln">   </span><span class="com">// giao tiếp Serial với 9600 baudrate.</span><span class="pln">
+  pinMode</span><span class="pun">(</span><span class="pln">motor</span><span class="pun">,</span><span class="pln">OUTPUT</span><span class="pun">);</span><span class="pln">
+  pinMode</span><span class="pun">(</span><span class="pln">button</span><span class="pun">,</span><span class="pln">INPUT</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">void</span><span class="pln"> loop</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">digitalRead</span><span class="pun">(</span><span class="pln">button</span><span class="pun">)</span><span class="pln"> </span><span class="pun">!=</span><span class="pln"> oldState</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">  </span><span class="com">// kiểm tra thay đổi trạng thái nút bấm</span><span class="pln">
+    time </span><span class="pun">=</span><span class="pln"> millis</span><span class="pun">();</span><span class="pln">    </span><span class="com">// reset lại bộ timer khi nút bấm thay đổi trạng thái</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  
+  state </span><span class="pun">=</span><span class="pln"> digitalRead</span><span class="pun">(</span><span class="pln">button</span><span class="pun">);</span><span class="pln">      </span><span class="com">// đọc giá trị nút bấm</span><span class="pln">
+  </span><span class="kwd">int</span><span class="pln"> duration </span><span class="pun">=</span><span class="pln"> millis</span><span class="pun">()</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> time</span><span class="pun">;</span><span class="pln">   </span><span class="com">// đo thời gian duy trì trạng thái hiện tại</span><span class="pln">
+  duration </span><span class="pun">=</span><span class="pln"> constrain</span><span class="pun">(</span><span class="pln">duration</span><span class="pun">,</span><span class="lit">0</span><span class="pun">,</span><span class="lit">5000</span><span class="pun">);</span><span class="pln">   </span><span class="com">// 0 &lt;= duration &lt;= 5000 ms.</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">state </span><span class="pun">==</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">   </span><span class="com">//nếu đang nhấn nút</span><span class="pln">
+      speedMotor </span><span class="pun">=</span><span class="pln"> map</span><span class="pun">(</span><span class="pln">duration</span><span class="pun">,</span><span class="lit">0</span><span class="pun">,</span><span class="lit">5000</span><span class="pun">,</span><span class="lit">0</span><span class="pun">,</span><span class="lit">255</span><span class="pun">);</span><span class="pln">
+      analogWrite</span><span class="pun">(</span><span class="pln">motor</span><span class="pun">,</span><span class="pln">speedMotor</span><span class="pun">);</span><span class="pln">  </span><span class="com">// xuất xung PWM để điều khiển tốc độ motor</span><span class="pln">
+                                      </span><span class="com">// duty cycle càng lớn thì motor quay càng nhanh</span><span class="pln">
+       delay</span><span class="pun">(</span><span class="lit">500</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+  
+  </span><span class="typ">Serial</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="pln">speedMotor</span><span class="pun">);</span><span class="pln">  </span><span class="com">// in ra Serial monitor giá trị tốc độ</span><span class="pln">
+  oldState </span><span class="pun">=</span><span class="pln"> state</span><span class="pun">;</span><span class="pln">            </span><span class="com">// cập nhật trạng thái nút bấm.</span><span class="pln">
+</span><span class="pun">}</span></pre><h2><span style="color:#FF8C00"><strong>Giải thích</strong></span></h2>
+<ul>
+<li>Đoạn code trên thực hiện việc xác định thời gian giữ nút bấm, sau đó chuyển giá trị thời gian đó sang <a href="http://arduino.vn/reference/xung-pwm">xung PWM</a>. Thời gian nhấn nút càng lâu thì motor quay càng nhanh.</li>
+<li>Chân <strong>Digital 8</strong> sẽ điều khiển tốc độ motor bằng cách xuất <a href="http://arduino.vn/reference/xung-pwm">xung PWM</a> để&nbsp;cấp điện áp (mức HIGH) vào chân Base của Transistor ==&gt; Transistor cho phép dòng điện đi qua ==&gt; motor hoạt động. Duty cycle càng lớn thì điện áp đặt vào chân Base của Transistor càng cao ==&gt; tốc độ motor càng lớn và ngược lại.</li>
+<li>Nếu không muốn điều khiển tốc độ, chúng ta chỉ cần dùng lệnh&nbsp;<em><span style="font-family:courier new,courier,monospace">digitalWrite(motor,1)</span></em> và&nbsp;<span style="font-family:courier new,courier,monospace">digitalWrite(motor,0)</span> để bật tắt motor.</li>
+<li>Nếu thay motor DC bằng relay (rơle) và lập trình 1 chút, chúng ta có thể điều khiển bật-tắt các thiết bị điện trong nhà như đèn, quạt,.... Sau này mình sẽ viết 1 bài về cách điều khiển thiết bị điện với remote TV và rơle.</li>
+</ul>
+<h2><span style="color:#FF8C00"><strong>Lời kết</strong></span></h2>
+<blockquote><p class="rteindent1">Chế cái gì đó thật cool nào!</p>
+<p class="rteindent1">Chúc các bạn thành công!</p>
+</blockquote>
+</div></div></div><div class="form-item form-type-item">
+  <label>Rate node </label>
+ <div class="rate-widget-1 rate-widget clear-block rate-user rate-widget-thumbs_up rate-32c8610d1e75d224069b3388b8562e90 rate-node-209-1-1 rate-processed" id="rate-node-209-1-1"><a class="rate-button rate-thumbs-up-btn-up" id="rate-button-1" rel="nofollow" href="http://arduino.vn/bai-viet/209-dieu-khien-toc-do-motor-dc?rate=3WfSOUR0mCcib2qzXMDfG41k7HoFTyxCKo0Z9sMhGc0" title="lên">lên</a><div class="rate-info">9 thành viên đã đánh giá bài viết này hữu ích.</div></div>
+</div>
+
+  <ul class="links inline"><li class="statistics_counter first last"><span>37028 lượt xem</span></li>
+</ul>  <div class="field field-name-field-tags field-type-taxonomy-term-reference field-label-above"><div class="field-label">Từ khóa:&nbsp;</div><div class="field-items"><div class="field-item even" rel="dc:subject"><a href="http://arduino.vn/tags/motor" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Motor</a></div><div class="field-item odd" rel="dc:subject"><a href="http://arduino.vn/tags/transistor" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">transistor</a></div><div class="field-item even" rel="dc:subject"><a href="http://arduino.vn/tags/arduino-uno" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Arduino UNO</a></div><div class="field-item odd" rel="dc:subject"><a href="http://arduino.vn/tags/dieu-khien-motor" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">điều khiển motor</a></div><div class="field-item even" rel="dc:subject"><a href="http://arduino.vn/tags/diode" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">diode</a></div><div class="field-item odd" rel="dc:subject"><a href="http://arduino.vn/tags/xung-pwm" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">xung PWM</a></div></div></div>  <div class="field field-name-field-chuyen-muc field-type-taxonomy-term-reference field-label-above"><div class="field-label">Chuyên mục:&nbsp;</div><div class="field-items"><div class="field-item even"><a href="http://arduino.vn/chuong-trinh-mau/level-intermediate-co-kien-thuc-co-ban" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Level: Intermediate - Có kiến thức cơ bản</a></div><div class="field-item odd"><a href="http://arduino.vn/dien-tu-co-ban" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Điện tử cơ bản</a></div><div class="field-item even"><a href="http://arduino.vn/nao-cung-lam" typeof="skos:Concept" property="rdfs:label skos:prefLabel" datatype="">Nào cùng làm!</a></div></div></div>  
+</article>
+<div id="block-fblikebutton-fblikebutton-dynamic-block" class="block block-fblikebutton even">
+
+      
+  
+<iframe src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/like.html" scrolling="no" frameborder="0" style="border: none; overflow: hidden; width: 450px; max-width:100%; height: 80px; " allowtransparency="true"></iframe>
+
+</div>
+<div id="block-views-tips-block" class="block block-views odd">
+
+        <h2 class="block__title block-title">Mẹo</h2>
+    
+  <div class="view view-tips view-id-tips view-display-id-block view-dom-id-e2ae79b0680d044dae973537039496df jquery-once-1-processed">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-body">        <div class="field-content"><p>Chưa biết cách đăng bài? <a href="http://arduino.vn/bai-viet/cach-chia-se"><strong>Tìm hiểu ngay</strong></a> và kiếm <a href="http://arduino.vn/diem-cong-dong"><strong>điểm cộng đồng</strong></a>.</p>
+</div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</div>
+<div id="block-views-b-i-li-n-quan-block" class="block block-views even">
+
+        <h2 class="block__title block-title">Bài liên quan</h2>
+    
+  <div class="view view-b-i-li-n-quan view-id-b_i_li_n_quan view-display-id-block view-dom-id-bb538d18c93476edd6a0bc5319d1c391 jquery-once-1-processed">
+        
+  
+  
+      <div class="view-content">
+      <div class="item-list">    <ul>          <li class="views-row views-row-1 views-row-odd views-row-first views-row-last">  
+  <div class="views-field views-field-title">        <span class="field-content"><a href="http://arduino.vn/bai-viet/181-gioi-thieu-servo-va-cach-dieu-khien-bang-bien-tro">Giới thiệu Servo và cách điều khiển bằng biến trở</a></span>  </div></li>
+      </ul></div>    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</div>
+<div id="block-views-inspire-project-views-block" class="block block-views odd">
+
+        <h2 class="block__title block-title">Các dự án được truyền cảm hứng</h2>
+    
+  <script type="text/javascript">
+$(document).ready(function() {
+// Tooltip only Text
+$('.view-inspire-project-views .views-field-title').each(function(k, v) {
+	v = $(v);
+	var a = v.find("span a");
+	var title = a.text().replace('"', "'");
+	var href = a.attr('href');
+	v.parent().find('.views-field-field-avatar img').attr('title', title).attr('href', href);
+	v.hide();
+});
+$('.view-inspire-project-views .views-field-field-avatar img').click(function() {
+	window.location = $(this).attr('href');
+});
+$('.view-inspire-project-views .views-field-field-avatar img').hover(function(){
+        // Hover over code
+        var title = $(this).attr('title');
+        $(this).data('tipText', title).removeAttr('title');
+        $('<p class="tooltip"></p>')
+        .text(title)
+        .appendTo('body')
+        .fadeIn('slow');
+}, function() {
+        // Hover out code
+        $(this).attr('title', $(this).data('tipText'));
+        $('.tooltip').remove();
+}).mousemove(function(e) {
+        var mousex = e.pageX + 20; //Get X coordinates
+        var mousey = e.pageY + 10; //Get Y coordinates
+        $('.tooltip')
+        .css({ top: mousey, left: mousex })
+});
+});
+</script>
+<div class="view view-inspire-project-views view-id-inspire_project_views view-display-id-block view-dom-id-d97a2a520e27482c28bb7cd4ec4dd6ff jquery-once-1-processed">
+        
+  
+  
+  
+  
+  
+  
+  
+  <ul><li><a href="http://arduino.vn/node/add/results?edit[field_post_reference][und][0][nid]=%C4%90i%E1%BB%81u%20khi%E1%BB%83n%20t%E1%BB%91c%20%C4%91%E1%BB%99%20Motor%20DC%20%5Bnid%3A%20209%5D">Bạn có một dự án hay và được truyền cảm hứng từ bài này? Cùng đóng góp!</a></li></ul>
+</div>
+</div>
+<div id="block-disqus-disqus-comments" class="block block-disqus last even">
+
+      
+  <div id="disqus_thread"><iframe id="dsq-app2" name="dsq-app2" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 7407px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe><iframe id="indicator-north" name="indicator-north" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" style="width: 820px !important; border: none !important; overflow: hidden !important; top: 0px !important; min-width: 820px !important; max-width: 820px !important; position: fixed !important; z-index: 2147483646 !important; height: 29px !important; min-height: 29px !important; max-height: 29px !important; display: none !important;" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/saved_resource(1).html"></iframe><iframe id="indicator-south" name="indicator-south" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" style="width: 820px !important; border: none !important; overflow: hidden !important; bottom: 0px !important; min-width: 820px !important; max-width: 820px !important; position: fixed !important; z-index: 2147483646 !important; height: 29px !important; min-height: 29px !important; max-height: 29px !important; display: none !important;" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/saved_resource(2).html"></iframe></div>
+</div>
+          </div>
+
+    <div id="navigation" class="fixed">
+	        
+
+        <div class="region region-navigation">
+    <div id="block-superfish-1" class="block block-superfish first last odd">
+
+      
+  <ul id="superfish-1" class="menu sf-menu sf-main-menu sf-horizontal sf-style-ktheme sf-total-items-8 sf-parent-items-2 sf-single-items-6 superfish-processed sf-js-enabled sf-shadow"><li id="menu-218-1" class="first odd sf-item-1 sf-depth-1 sf-no-children"><a href="http://arduino.vn/" title="" class="sf-depth-1">Trang chủ</a></li><li id="menu-409-1" class="middle even sf-item-2 sf-depth-1 sf-total-children-11 sf-parent-children-1 sf-single-children-10 menuparent"><a href="http://arduino.vn/tham-khao" class="sf-depth-1 menuparent sf-with-ul">Tham khảo<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden" style="float: none; width: 17.625em;"><li id="menu-2973-1" class="first odd sf-item-1 sf-depth-2 sf-no-children" style="white-space: normal; float: left; width: 100%;"><a href="http://arduino.vn/reference/howto" title="" class="sf-depth-2" style="float: none; width: auto;">Tự học Arduino</a></li><li id="menu-3336-1" class="middle even sf-item-2 sf-depth-2 sf-no-children" style="white-space: normal; float: left; width: 100%;"><a href="http://arduino.vn/reference/getting-started/step1" title="" class="sf-depth-2" style="float: none; width: auto;">Học Arduino cần những gì?</a></li><li id="menu-557-1" class="middle odd sf-item-3 sf-depth-2 sf-no-children" style="white-space: normal; float: left; width: 100%;"><a href="http://arduino.vn/gioi-thieu-ve-arduino" title="" class="sf-depth-2" style="float: none; width: auto;">Giới thiệu về Arduino</a></li><li id="menu-2884-1" class="middle even sf-item-4 sf-depth-2 sf-no-children" style="white-space: normal; float: left; width: 100%;"><a href="http://arduino.vn/raspberry-pi" title="" class="sf-depth-2" style="float: none; width: auto;">Raspberry Pi</a></li><li id="menu-1120-1" class="middle odd sf-item-5 sf-depth-2 sf-no-children" style="white-space: normal; float: left; width: 100%;"><a href="http://arduino.vn/intel-galileo" title="" class="sf-depth-2" style="float: none; width: auto;">Intel Galileo</a></li><li id="menu-484-1" class="middle even sf-item-6 sf-depth-2 sf-no-children" style="white-space: normal; float: left; width: 100%;"><a href="http://arduino.vn/reference" class="sf-depth-2" style="float: none; width: auto;">Tài liệu tham khảo</a></li><li id="menu-411-1" class="middle odd sf-item-7 sf-depth-2 sf-total-children-3 sf-parent-children-0 sf-single-children-3 menuparent" style="white-space: normal; float: left; width: 100%;"><a href="http://arduino.vn/chuong-trinh-mau" class="sf-depth-2 menuparent sf-with-ul" style="float: none; width: auto;">Chương trình mẫu<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden" style="left: 17.625em; float: none; width: 25.5em;"><li id="menu-558-1" class="first odd sf-item-1 sf-depth-3 sf-no-children" style="white-space: normal; float: left; width: 100%;"><a href="http://arduino.vn/chuong-trinh-mau/level-beginner-vo-long" title="" class="sf-depth-3" style="float: none; width: auto;">Level: Beginner - Vỡ lòng</a></li><li id="menu-771-1" class="middle even sf-item-2 sf-depth-3 sf-no-children" style="white-space: normal; float: left; width: 100%;"><a href="http://arduino.vn/chuong-trinh-mau/level-intermediate-co-kien-thuc-co-ban" title="" class="sf-depth-3" style="float: none; width: auto;">Level: Intermediate - Có kiến thức cơ bản</a></li><li id="menu-1121-1" class="last odd sf-item-3 sf-depth-3 sf-no-children" style="white-space: normal; float: left; width: 100%;"><a href="http://arduino.vn/chuong-trinh-mau/level-advanced-nang-cao" title="" class="sf-depth-3" style="float: none; width: auto;">Level: Advanced - Nâng cao</a></li></ul></li><li id="menu-414-1" class="middle even sf-item-8 sf-depth-2 sf-no-children" style="white-space: normal; float: left; width: 100%;"><a href="http://arduino.vn/reference/library" title="" class="sf-depth-2" style="float: none; width: auto;">Thư viện</a></li><li id="menu-559-1" class="middle odd sf-item-9 sf-depth-2 sf-no-children" style="white-space: normal; float: left; width: 100%;"><a href="http://arduino.vn/reference/cac-loi-thuong-gap-tren-Arduino-va-cach-khac-phuc" class="sf-depth-2" style="float: none; width: auto;">Lỗi của Arduino ?</a></li><li id="menu-701-1" class="middle even sf-item-10 sf-depth-2 sf-no-children" style="white-space: normal; float: left; width: 100%;"><a href="http://arduino.vn/dien-tu-co-ban" title="" class="sf-depth-2" style="float: none; width: auto;">Điện tử cơ bản</a></li><li id="menu-1547-1" class="last odd sf-item-11 sf-depth-2 sf-no-children" style="white-space: normal; float: left; width: 100%;"><a href="http://arduino.vn/lap-trinh-c" title="" class="sf-depth-2" style="float: none; width: auto;">Lập trình C</a></li></ul></li><li id="menu-560-1" class="middle odd sf-item-3 sf-depth-1 sf-total-children-1 sf-parent-children-0 sf-single-children-1 menuparent"><a href="http://arduino.vn/nao-cung-lam" title="Nào cùng làm với cộng đồng Arduino" class="sf-depth-1 menuparent sf-with-ul">Nào cùng làm!<span class="sf-sub-indicator"> »</span></a><ul class="sf-hidden" style="float: none; width: 12em;"><li id="menu-3337-1" class="firstandlast odd sf-item-1 sf-depth-2 sf-no-children" style="white-space: normal; float: left; width: 100%;"><a href="http://arduino.vn/nodejs" title="" class="sf-depth-2" style="float: none; width: auto;">NodeJS - IOT</a></li></ul></li><li id="menu-514-1" class="middle even sf-item-4 sf-depth-1 sf-no-children"><a href="http://arduino.vn/bai-viet/cach-chia-se" class="sf-depth-1">Đăng bài</a></li><li id="menu-1635-1" class="middle odd sf-item-5 sf-depth-1 sf-no-children"><a href="http://arduino.vn/bai-viet/tai-ve-cac-tai-nguyen" class="sf-depth-1">Tải về</a></li><li id="menu-2971-1" class="middle even sf-item-6 sf-depth-1 sf-no-children"><a href="http://arduino.vn/cuoc-thi" title="" class="sf-depth-1">Cuộc thi</a></li><li id="menu-1080-1" class="middle odd sf-item-7 sf-depth-1 sf-no-children"><a href="http://arduino.vn/ve-chung-toi" class="sf-depth-1">Về chúng tôi</a></li><li id="menu-3249-1" class="last even sf-item-8 sf-depth-1 sf-no-children"><a href="http://arduino.vn/exam" title="" class="sf-depth-1">Bài tập</a></li></ul>
+</div>
+  </div>
+
+    </div>
+
+    
+          <aside class="sidebars">
+                  <section class="region region-sidebar-second column sidebar">
+    <div id="block-user-login" class="block block-user first odd" role="form">
+
+        <h2 class="block__title block-title">Đăng nhập</h2>
+    
+  <form action="http://arduino.vn/bai-viet/209-dieu-khien-toc-do-motor-dc?destination=node/209" method="post" id="user-login-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-name">
+  <label for="edit-name">Tên người dùng <span class="form-required" title="Trường dữ liệu này là bắt buộc.">*</span></label>
+ <input type="text" id="edit-name" name="name" value="" size="15" maxlength="60" class="form-text required">
+</div>
+<div class="form-item form-type-password form-item-pass">
+  <label for="edit-pass">Mật khẩu <span class="form-required" title="Trường dữ liệu này là bắt buộc.">*</span></label>
+ <input type="password" id="edit-pass" name="pass" size="15" maxlength="128" class="form-text required">
+</div>
+<div class="item-list"><ul><li class="first"><a href="http://arduino.vn/user/register" title="Tạo tài khoản người dùng mới.">Tạo tài khoản mới</a></li>
+<li class="last"><a href="http://arduino.vn/user/password" title="Yêu cầu gửi mật khẩu mới qua thư điện tử.">Yêu cầu mật khẩu mới</a></li>
+</ul></div><input type="hidden" name="form_build_id" value="form-JEyosqBdjM8Tjo1oAlHS_76yETVjfRuB75QoT5dQ8jk">
+<input type="hidden" name="form_id" value="user_login_block">
+<div id="fbconnect_button" class="form-item form-type-item">
+  <label for="fbconnect_button">Đăng nhập bằng Facebook </label>
+ <fb:login-button size="large" background="dark" v="3" data-scope="email" login_text="Connect" class=" fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=1424185567850442&amp;container_width=66&amp;locale=vi_VN&amp;login_text=Connect&amp;scope=email&amp;sdk=joey&amp;size=large"><span style="vertical-align: bottom; width: 87px; height: 25px;"><iframe name="f1736ee4f74e97" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:login_button Facebook Social Plugin" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/login_button.html" style="border: none; visibility: visible; width: 87px; height: 25px;" class=""></iframe></span></fb:login-button>
+</div>
+<div class="form-actions form-wrapper" id="edit-actions--2"><input type="submit" id="edit-submit--2" name="op" value="Đăng nhập" class="form-submit"></div></div></form>
+</div>
+<div id="block-disqus-disqus-recent-comments" class="block block-disqus even">
+
+        <h2 class="block__title block-title">Bình luận gần đây</h2>
+    
+  <div id="dsq-recentcomments" class="dsq-widget"><script src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/recent_comments_widget.js"></script> <style type="text/css" media="screen">	 .dsq-widget ul.dsq-widget-list {	 padding: 0;	 margin: 0;	 text-align: left;	 }	 img.dsq-widget-avatar {	 width: 32px;	 height: 32px;	 border: 0px;	 margin: 0px;	 padding: 0px 3px 3px 0px;	 float: left;	 }	 a.dsq-widget-user {	 font-weight: bold;	 }	 a.dsq-widget-thread {	 font-weight: bold;	 }	 p.dsq-widget-meta {	 clear: both;	 font-size: 80%;	 padding: 0;	 margin: 0;	 }	 li.dsq-widget-item {	 margin: 15px 0;	 list-style-type: none;	 clear: both;	 }	 span.dsq-widget-clout {	 padding: 0 2px;	 background-color: #ff7300;	 color: #fff;	 }	 table.dsq-widget-horiz td {	 padding-right: 15px;	 }	 .dsq-widget-comment p {	 display: inline;	 }	 </style>	 <ul class="dsq-widget-list">	 <li class="dsq-widget-item">	 <a href="https://disqus.com/by/arduinovnn-a430a7300689d591618cb08a7f156c36/"><img class="dsq-widget-avatar" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/avatar92.jpg"></a>	 <a class="dsq-widget-user" href="https://disqus.com/by/arduinovnn-a430a7300689d591618cb08a7f156c36/">cuongnk2502</a>	 <span class="dsq-widget-comment"><p>Sao mình làm theo mà nó xuất hiên lỗi này 1 có ai chỉ minh đc ko ??mình mới làm lần đầu đó hic</p></span>	 <p class="dsq-widget-meta"><a href="http://arduino.vn/bai-viet/291-cach-xuat-file-hex-tu-arduino-ide-va-mo-phong-arduino-tren-phan-mem-proteus">Cách Xuất File .Hex Từ Arduino IDE Và Mô Phỏng Arduino Trên Phần Mềm Proteus</a>&nbsp;·&nbsp;<a href="http://arduino.vn/bai-viet/291-cach-xuat-file-hex-tu-arduino-ide-va-mo-phong-arduino-tren-phan-mem-proteus#comment-2679479280">12 hours ago</a></p>	 </li>	 <li class="dsq-widget-item">	 <a href="https://disqus.com/by/disqus_DxnHvJbLGb/"><img class="dsq-widget-avatar" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/avatar92(1).jpg"></a>	 <a class="dsq-widget-user" href="https://disqus.com/by/disqus_DxnHvJbLGb/">Quang Đức</a>	 <span class="dsq-widget-comment"><p>bạn kiểm tra lại trong phần device manager xem máy tính nhận chưa nhé</p></span>	 <p class="dsq-widget-meta"><a href="http://arduino.vn/bai-viet/606-dieu-khien-led-bang-labview-va-arduino-mot-huong-di-moi">Điều khiển LED bằng "LabView và Arduino" Một hướng đi mới.</a>&nbsp;·&nbsp;<a href="http://arduino.vn/bai-viet/606-dieu-khien-led-bang-labview-va-arduino-mot-huong-di-moi#comment-2678682726">21 hours ago</a></p>	 </li>	 <li class="dsq-widget-item">	 <a href="https://disqus.com/by/dngchimxanh/"><img class="dsq-widget-avatar" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/avatar92(2).jpg"></a>	 <a class="dsq-widget-user" href="https://disqus.com/by/dngchimxanh/">Anti Muhamad Ali</a>	 <span class="dsq-widget-comment"><p>của mình nó bị sao vậy các bác :(<br><a href="https://www.youtube.com/watch?v=-HKigyQzOj4" rel="nofollow">https://www.youtube.com/watch?...</a></p></span>	 <p class="dsq-widget-meta"><a href="http://arduino.vn/bai-viet/329-tu-lam-mach-led-trai-tim">Tự làm mạch led trái tim</a>&nbsp;·&nbsp;<a href="http://arduino.vn/bai-viet/329-tu-lam-mach-led-trai-tim#comment-2678040107">1 day ago</a></p>	 </li>	 <li class="dsq-widget-item">	 <a href="https://disqus.com/by/arduinovnn-30410be149e6771f60881182342452d5/"><img class="dsq-widget-avatar" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/avatar92(3).jpg"></a>	 <a class="dsq-widget-user" href="https://disqus.com/by/arduinovnn-30410be149e6771f60881182342452d5/">Nguyễn Trung Hậu</a>	 <span class="dsq-widget-comment"><p>Bạn đã giao tiếp thành công giữa Arduino với VB chưa ?</p></span>	 <p class="dsq-widget-meta"><a href="http://arduino.vn/bai-viet/180-gioi-thieu-cam-bien-anh-sang-va-cach-lap-trinh">Giới Thiệu Cảm Biến Ánh Sáng Và Cách Lập Trình</a>&nbsp;·&nbsp;<a href="http://arduino.vn/bai-viet/180-gioi-thieu-cam-bien-anh-sang-va-cach-lap-trinh#comment-2677956751">1 day ago</a></p>	 </li>	 <li class="dsq-widget-item">	 <a href="https://disqus.com/by/arduinovnn-ab7314887865c4265e896c6e209d1cd6/"><img class="dsq-widget-avatar" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/avatar92(4).jpg"></a>	 <a class="dsq-widget-user" href="https://disqus.com/by/arduinovnn-ab7314887865c4265e896c6e209d1cd6/">TNT_C4</a>	 <span class="dsq-widget-comment"><p>Mình dùng thư viện của Miguel Balboa thì có ví dụ về đổi UID đó bạn. <a href="https://github.com/miguelbalboa/rfid" rel="nofollow">https://github.com/miguelbalbo...</a></p></span>	 <p class="dsq-widget-meta"><a href="http://arduino.vn/bai-viet/833-lap-trinh-va-su-dung-modul-doc-rfid-rc522">Lập trình và sử dụng modul đọc thẻ RFID-RC522</a>&nbsp;·&nbsp;<a href="http://arduino.vn/bai-viet/833-lap-trinh-va-su-dung-modul-doc-rfid-rc522#comment-2677845920">1 day ago</a></p>	 </li>	 <li class="dsq-widget-item">	 <a href="https://disqus.com/by/disqus_TnsZhjmXVb/"><img class="dsq-widget-avatar" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/avatar92(5).jpg"></a>	 <a class="dsq-widget-user" href="https://disqus.com/by/disqus_TnsZhjmXVb/">Tờ Tờ Tờ Tờ</a>	 <span class="dsq-widget-comment"><p>em có đọc bài Debounce cho nút nhấn rồi , giờ em xài điện trở kéo có sẵn trong adruino thì em Debounce kiểu gì ạ?<br>em còn yếu kém ai chỉ em với !</p></span>	 <p class="dsq-widget-meta"><a href="http://arduino.vn/bai-viet/161-bai-11-xac-dinh-trang-thai-cua-mot-nut-nhan-button-inputpullup">Bài 11: Xác định trạng thái của một nút nhấn (button) - INPUT_PULLUP</a>&nbsp;·&nbsp;<a href="http://arduino.vn/bai-viet/161-bai-11-xac-dinh-trang-thai-cua-mot-nut-nhan-button-inputpullup#comment-2677257238">1 day ago</a></p>	 </li>	 <li class="dsq-widget-item">	 <a href="https://disqus.com/by/inhhngthi/"><img class="dsq-widget-avatar" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/avatar92(6).jpg"></a>	 <a class="dsq-widget-user" href="https://disqus.com/by/inhhngthi/">Đinh Hồng Thái</a>	 <span class="dsq-widget-comment"><p>học được bất đồng bộ thì sẽ suôn sẻ nhiều dự án hay hì hì</p></span>	 <p class="dsq-widget-meta"><a href="http://arduino.vn/bai-viet/836-bien-dong-co-servo-thanh-dong-co-khong-can-dung-mach-cau-h">biến động cơ SERVO thành động cơ không cần dùng mạch cầu H</a>&nbsp;·&nbsp;<a href="http://arduino.vn/bai-viet/836-bien-dong-co-servo-thanh-dong-co-khong-can-dung-mach-cau-h#comment-2676938816">1 day ago</a></p>	 </li>	 <li class="dsq-widget-item">	 <a href="https://disqus.com/by/arduinovnn-12ced2db6f0193dda91ba86224ea1cd8/"><img class="dsq-widget-avatar" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/avatar92(7).jpg"></a>	 <a class="dsq-widget-user" href="https://disqus.com/by/arduinovnn-12ced2db6f0193dda91ba86224ea1cd8/">Thái</a>	 <span class="dsq-widget-comment"><p>à cái xe đó chỉ là giới thiệu thôi bạn. sản phẩn dự thi nữa. với app đấy chỉ dùng dc cho code của xe nha bạn phải đồng bộ với code</p></span>	 <p class="dsq-widget-meta"><a href="http://arduino.vn/bai-viet/628-gui-va-nhan-du-lieu-tu-arduino-va-smartphone-qua-bluetooth">gửi và nhận dữ liệu từ arduino và smartphone qua bluetooth</a>&nbsp;·&nbsp;<a href="http://arduino.vn/bai-viet/628-gui-va-nhan-du-lieu-tu-arduino-va-smartphone-qua-bluetooth#comment-2676936023">1 day ago</a></p>	 </li>	 <li class="dsq-widget-item">	 <a href="https://disqus.com/by/inhhngthi/"><img class="dsq-widget-avatar" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/avatar92(6).jpg"></a>	 <a class="dsq-widget-user" href="https://disqus.com/by/inhhngthi/">Đinh Hồng Thái</a>	 <span class="dsq-widget-comment"><p>ok anh em sẽ copy cách của anh</p></span>	 <p class="dsq-widget-meta"><a href="http://arduino.vn/bai-viet/836-bien-dong-co-servo-thanh-dong-co-khong-can-dung-mach-cau-h">biến động cơ SERVO thành động cơ không cần dùng mạch cầu H</a>&nbsp;·&nbsp;<a href="http://arduino.vn/bai-viet/836-bien-dong-co-servo-thanh-dong-co-khong-can-dung-mach-cau-h#comment-2676932818">1 day ago</a></p>	 </li>	 <li class="dsq-widget-item">	 <a href="https://disqus.com/by/nghunhngckhnh/"><img class="dsq-widget-avatar" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/avatar92(8).jpg"></a>	 <a class="dsq-widget-user" href="https://disqus.com/by/nghunhngckhnh/">Ngô Huỳnh Ngọc Khánh</a>	 <span class="dsq-widget-comment"><p>bất động bộ là một kĩ thuật lập trình, trước khi học em phải nắm cơ bản về kĩ thuật lập trình và con trỏ trước :D. Tuy nhiên với thư viện của anh thì em hoàn toàn có...</p></span>	 <p class="dsq-widget-meta"><a href="http://arduino.vn/bai-viet/836-bien-dong-co-servo-thanh-dong-co-khong-can-dung-mach-cau-h">biến động cơ SERVO thành động cơ không cần dùng mạch cầu H</a>&nbsp;·&nbsp;<a href="http://arduino.vn/bai-viet/836-bien-dong-co-servo-thanh-dong-co-khong-can-dung-mach-cau-h#comment-2676919561">1 day ago</a></p>	 </li>	 </ul>
+</div>
+</div>
+<div id="block-disqus-disqus-popular-threads" class="block block-disqus odd">
+
+        <h2 class="block__title block-title">Bài đọc nhiều</h2>
+    
+  <div id="dsq-popthreads" class="dsq-widget"><script src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/popular_threads_widget.js"></script> <style type="text/css" media="screen">	 .dsq-widget ul.dsq-widget-list {	 padding: 0;	 margin: 0;	 text-align: left;	 }	 img.dsq-widget-avatar {	 border: 0px;	 margin: 0px;	 padding: 0px 3px 3px 0px;	 float: left;	 }	 a.dsq-widget-user {	 font-weight: bold;	 }	 a.dsq-widget-thread {	 font-weight: bold;	 }	 p.dsq-widget-meta {	 clear: both;	 font-size: 80%;	 padding: 0;	 margin: 0;	 }	 li.dsq-widget-item {	 margin: 15px 0;	 list-style-type: none;	 clear: both;	 }	 span.dsq-widget-clout {	 padding: 0 2px;	 background-color: #ff7300;	 color: #fff;	 }	 table.dsq-widget-horiz td {	 padding-right: 15px;	 }	 .dsq-widget-comment p {	 display: inline;	 }	 </style>	 <ul class="dsq-widget-list">	 <li class="dsq-widget-item">	 <a class="dsq-widget-thread" href="http://arduino.vn/bai-viet/836-bien-dong-co-servo-thanh-dong-co-khong-can-dung-mach-cau-h">biến động cơ SERVO thành động cơ không cần dùng mạch cầu H</a>	 <p class="dsq-widget-meta">12 comments · 1 day ago</p>	 </li>	 <li class="dsq-widget-item">	 <a class="dsq-widget-thread" href="http://arduino.vn/bai-viet/833-lap-trinh-va-su-dung-modul-doc-rfid-rc522">Lập trình và sử dụng modul đọc thẻ RFID-RC522</a>	 <p class="dsq-widget-meta">16 comments · 1 day ago</p>	 </li>	 <li class="dsq-widget-item">	 <a class="dsq-widget-thread" href="http://arduino.vn/bai-viet/823-huong-dan-mode-pl2303-usb-uart-nap-cho-arduino-promini">Hướng dẫn MODE PL2303 (USB -&amp;gt; UART) nạp cho Arduino promini</a>	 <p class="dsq-widget-meta">12 comments · 3 days ago</p>	 </li>	 <li class="dsq-widget-item">	 <a class="dsq-widget-thread" href="http://arduino.vn/bai-viet/825-clone-clone-led-rgb-voi-cuc-duong-chung">Clone of Clone of LED RGB với cực dương chung</a>	 <p class="dsq-widget-meta">4 comments · 1 week ago</p>	 </li>	 <li class="dsq-widget-item">	 <a class="dsq-widget-thread" href="http://arduino.vn/bai-viet/802-tntledblink5">TNT_LedBlink5</a>	 <p class="dsq-widget-meta">3 comments · 1 week ago</p>	 </li>	 <li class="dsq-widget-item">	 <a class="dsq-widget-thread" href="http://arduino.vn/bai-viet/806-cai-dat-nodejs-tren-windows-moi-truong-iot-chuyen-nghiep">Cài đặt NodeJS trên Windows - môi trường IOT chuyên nghiệp</a>	 <p class="dsq-widget-meta">6 comments · 1 week ago</p>	 </li>	 <li class="dsq-widget-item">	 <a class="dsq-widget-thread" href="http://arduino.vn/bai-viet/795-cach-xoa-hoodloader2-cho-con-atmega16u2atmega32u4-tren-arduino-uno-mega-cua-ban">Cách xóa Hoodloader2 cho con Atmega16u2/Atmega32u4 trên Arduino Uno / Mega của bạn</a>	 <p class="dsq-widget-meta">2 comments · 4 weeks ago</p>	 </li>	 <li class="dsq-widget-item">	 <a class="dsq-widget-thread" href="http://arduino.vn/bai-viet/797-dieu-khien-3-led-theo-bit-trong-1-byte">Điều khiển 3 led theo bit trong 1 byte</a>	 <p class="dsq-widget-meta">1 comment · 4 weeks ago</p>	 </li>	 </ul>
+</div>
+</div>
+<div id="block-block-15" class="block block-block last even menuNodeTop">
+
+        <h2 class="block__title block-title">Mục lục</h2>
+    
+  <style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+.menuNodeTop {
+top:40px;
+position: fixed;
+z-index:1000001;
+background: white;
+width:320px;
+}
+.menuNodeOverflow {
+overflow:scroll;
+}
+
+/*--><!]]>*/
+</style><script type="text/javascript">
+<!--//--><![CDATA[// ><!--
+
+$(document).ready(function() {
+  
+  var titleH2 = $('div#menu-block-content').parent().find('h2');
+  var tags = "H2,H3,H4,H5,H6";
+  tags = tags.split(",");
+  var eles = new Array();
+  //select
+  for (var i = 0; i < tags.length; i++)
+    $("article").find(tags[i]).each(function(index, tag) {
+      eles = eles.concat($(tag));
+    });
+  if (eles.length == 0) {
+$('div#menu-block-content').parent().hide();
+return;
+}
+  //sort
+  eles.sort(function(a, b) {
+    return a.position().top - b.position().top;
+  });
+  //generate
+  var render = "<p>Trở thành thành viên để mở khóa chức năng này!<p><a href='http://arduino.vn/bai-viet/diem-cong-dong'>Xây dựng thương hiệu bản thân bằng <span style='color:orange;'>ĐIỂM CỘNG ĐỒNG<p><a href='http://arduino.vn/getting-started'><img src='http://k2.arduino.vn/img/2016/04/03/0/2295_882450-1459668200-0-gettingstarted.750x450.300x180.png' style='width:100%;' />";
+  render += "";
+  var menuAutoFollow = function() {
+titleH2.addClass("kBlink");
+};
+titleH2.click(function() {
+titleH2.toggleClass("kBlink");
+});
+setInterval(function() {
+$(".kBlink").fadeTo(100, 0.1).fadeTo(200, 1.0);
+}, 2000);
+  //sethtml
+  $("div#menu-block-content").html(render);
+  $("div#menu-block-content a").click(function() {
+    menuAutoFollow();
+    $('html, body').animate({
+                    scrollTop: eles[parseInt($(this).attr('kmenuclick'))].offset().top
+                }, 2000);
+  });
+if ($(window).height() - 40 < $('div#menu-block-content').parent().height()) {
+$('div#menu-block-content').parent().addClass('menuNodeOverflow').height($(window).height() - 40);
+}
+
+//bind scroll
+var thresholdHeightMin = $('div#menu-block-content').parent().position().top;
+var thresholdHeightMax = $("div.footer-wrapper").position().top;
+setInterval(function() {
+thresholdHeightMin = $('div#menu-block-content').parent().position().top;
+thresholdHeightMax = $("div.footer-wrapper").position().top - $(window).height() + 40;
+}, 5000);
+$(window).bind('scroll', function() {
+var nowHeight = $(window).scrollTop();
+	     if ((nowHeight > thresholdHeightMin || (titleH2.hasClass('kBlink') && nowHeight > 150)) && nowHeight <= thresholdHeightMax) {
+	         $('div#menu-block-content').parent().addClass('menuNodeTop');
+	     }
+	     else {
+	         $('div#menu-block-content').parent().removeClass('menuNodeTop');
+	     }
+	});
+});
+
+//--><!]]>
+</script><div id="menu-block-content"><p>Trở thành thành viên để mở khóa chức năng này!</p><p><a href="http://arduino.vn/bai-viet/diem-cong-dong">Xây dựng thương hiệu bản thân bằng <span style="color:orange;">ĐIỂM CỘNG ĐỒNG</span></a></p><p><a href="http://arduino.vn/getting-started"><img src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/2295_882450-1459668200-0-gettingstarted.750x450.300x180.png" style="width:100%;"></a></p></div>
+
+</div>
+  </section>
+      </aside>
+    
+  </div>
+  
+
+</div>
+<div class="footer-wrapper">
+	<div>&nbsp;</div>
+  	<div>
+	  		  <div id="footer-columns" class="clearfix">
+		      <div class="region region-footer-firstcolumn">
+    <div id="block-user-online" class="block block-user first last odd" role="complementary">
+
+        <h2 class="block__title block-title">Thành viên trực tuyến</h2>
+    
+  <p>Hiện đang có 17 người trực tuyến.</p><div class="item-list"><ul><li class="first"><a href="http://arduino.vn/users/macduyhai" title="Xem hồ sơ người dùng." class="username" xml:lang="" about="/users/macduyhai" typeof="sioc:UserAccount" property="foaf:name" datatype="">macduyhai</a></li>
+<li><a href="http://arduino.vn/users/chumvolum" title="Xem hồ sơ người dùng." class="username" xml:lang="" about="/users/chumvolum" typeof="sioc:UserAccount" property="foaf:name" datatype="">chumvolum</a></li>
+<li><a href="http://arduino.vn/users/anhtu0310" title="Xem hồ sơ người dùng." class="username" xml:lang="" about="/users/anhtu0310" typeof="sioc:UserAccount" property="foaf:name" datatype="">anhtu0310</a></li>
+<li><a href="http://arduino.vn/users/nguyen-minh-duc" title="Xem hồ sơ người dùng." class="username" xml:lang="" about="/users/nguyen-minh-duc" typeof="sioc:UserAccount" property="foaf:name" datatype="">nguyen minh duc</a></li>
+<li class="last"><a href="http://arduino.vn/users/chinhpro82" title="Xem hồ sơ người dùng." class="username" xml:lang="" about="/users/chinhpro82" typeof="sioc:UserAccount" property="foaf:name" datatype="">chinhpro82</a></li>
+</ul></div>
+</div>
+  </div>
+		      <div class="region region-footer-secondcolumn">
+    <div id="block-user-new" class="block block-user first last odd" role="complementary">
+
+        <h2 class="block__title block-title">Thành viên mới</h2>
+    
+  <div class="item-list"><ul><li class="first"><a href="http://arduino.vn/users/chinhpro82" title="Xem hồ sơ người dùng." class="username" xml:lang="" about="/users/chinhpro82" typeof="sioc:UserAccount" property="foaf:name" datatype="">chinhpro82</a></li>
+<li><a href="http://arduino.vn/users/tranvanhoang96" title="Xem hồ sơ người dùng." class="username" xml:lang="" about="/users/tranvanhoang96" typeof="sioc:UserAccount" property="foaf:name" datatype="">tranvanhoang96</a></li>
+<li><a href="http://arduino.vn/users/cong" title="Xem hồ sơ người dùng." class="username" xml:lang="" about="/users/cong" typeof="sioc:UserAccount" property="foaf:name" datatype="">Công</a></li>
+<li><a href="http://arduino.vn/users/nguyen-hoang-long-15742043" title="Xem hồ sơ người dùng." class="username" xml:lang="" about="/users/nguyen-hoang-long-15742043" typeof="sioc:UserAccount" property="foaf:name" datatype="">Nguyễn Hoàng Lo...</a></li>
+<li><a href="http://arduino.vn/users/ttbao94" title="Xem hồ sơ người dùng." class="username" xml:lang="" about="/users/ttbao94" typeof="sioc:UserAccount" property="foaf:name" datatype="">ttbao94</a></li>
+<li><a href="http://arduino.vn/users/dinhdien" title="Xem hồ sơ người dùng." class="username" xml:lang="" about="/users/dinhdien" typeof="sioc:UserAccount" property="foaf:name" datatype="">Dinh_Dien</a></li>
+<li><a href="http://arduino.vn/users/tran-toan" title="Xem hồ sơ người dùng." class="username" xml:lang="" about="/users/tran-toan" typeof="sioc:UserAccount" property="foaf:name" datatype="">Trần Toản</a></li>
+<li><a href="http://arduino.vn/users/thanhf291945" title="Xem hồ sơ người dùng." class="username" xml:lang="" about="/users/thanhf291945" typeof="sioc:UserAccount" property="foaf:name" datatype="">thanhf291945</a></li>
+<li><a href="http://arduino.vn/users/vietanhbkhn2012" title="Xem hồ sơ người dùng." class="username" xml:lang="" about="/users/vietanhbkhn2012" typeof="sioc:UserAccount" property="foaf:name" datatype="">vietanhbkhn2012</a></li>
+<li class="last"><a href="http://arduino.vn/users/dacquyen" title="Xem hồ sơ người dùng." class="username" xml:lang="" about="/users/dacquyen" typeof="sioc:UserAccount" property="foaf:name" datatype="">dacquyen</a></li>
+</ul></div>
+</div>
+  </div>
+		      <div class="region region-footer-thirdcolumn">
+    <div id="block-block-1" class="block block-block first last odd">
+
+        <h2 class="block__title block-title">Về chúng tôi</h2>
+    
+  <p class="rtejustify"><a href="http://arduino.vn/">Arduino.vn</a> được xây dựng trên nền tảng Drupal 7, phiên bản hiện tại 2.1 tên mã <a href="http://arduino.vn/changelog">Bính Thân</a>.</p>
+<p class="rtejustify">Đây là trang thông tin phi lợi nhuận ra đời hướng tới cộng đồng trẻ, những chủ nhân tương lai của đất nước. <strong><a href="http://arduino.vn/ve-chung-toi">Tìm hiểu thêm</a></strong></p>
+
+</div>
+  </div>
+		      <div class="region region-footer-fourthcolumn">
+    <div id="block-block-2" class="block block-block first last odd">
+
+        <h2 class="block__title block-title">Liên kết</h2>
+    
+  <p>Một sản phẩm hợp tác với <a href="http://machtudong.vn/">Machtudong.vn</a></p>
+<p class="rtecenter"><img alt="" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/grzxrak875oi.png"></p>
+
+</div>
+  </div>
+		  </div> <!-- /#footer-columns -->
+	  	  	 </div>
+  </div>
+  <div class="region region-bottom">
+    <div id="block-block-3" class="block block-block first last odd">
+
+      
+  <div style="margin: 0; padding-top:15px;"><a class="dmca-badge" href="http://www.dmca.com/Protection/Status.aspx?ID=78aa6fcb-6c63-4023-b42d-872e89882865" style="line-height: 1.6;" title="DMCA.com Protection Program"><img alt="DMCA.com Protection Status" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/dmca_protected_sml_120m.png" style="border-style:solid; border-width:0px"></a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license" style="line-height: 1.6; font-family: &#39;courier new&#39;, courier, monospace;"><img alt="Creative Commons License" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/88x31.png" style="border-style:solid; border-width:0px"></a><br><span style="font-size:14px"><span style="font-family:verdana,geneva,sans-serif">Nội dung trên trang <a href="http://arduino.vn/" style="font-family: &#39;courier new&#39;, courier, monospace; font-size: 14px; line-height: 1.6;">Arduino.vn</a> được phân phối theo giấy phép <a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license" style="font-family: &#39;courier new&#39;, courier, monospace; font-size: 14px; line-height: 1.6;">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</span></span><br><span style="font-size:14px"><span style="font-family:verdana,geneva,sans-serif">Vui lòng ghi rõ nguồn và link về bài gốc nếu bạn tham khảo nội dung từ website này.</span></span></div>
+
+</div>
+  </div>
+    <div class="region region-page-bottom">
+    <div id="fb-root" class=" fb_reset"><script src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/all.js" async=""></script><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/xd_arbiter.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/xd_arbiter(1).html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+      <script type="text/javascript">
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId : '1424185567850442',
+            cookie : true, // enable cookies to allow the server to access the session
+            xfbml : true,
+            logging: '0',
+            channelURL: 'http://arduino.vn/sites/all/modules/fbconnect/channel.html',
+            oauth  : true
+          });
+          // whenever the user logs in, we tell our login service
+          FB.Event.subscribe('auth.login', function() {
+            window.location.reload();
+          });
+          FB.Event.subscribe('auth.logout', function(response) {
+            window.location.reload();
+          });
+
+          jQuery(document).trigger('fb:init');
+        };
+
+        (function() {
+          var e = document.createElement('script');
+          e.src = document.location.protocol + '//connect.facebook.net/vi_VN/all.js';
+          e.async = true;
+          document.getElementById('fb-root').appendChild(e);
+        }());
+      </script>  </div>
+<script src="./Điều khiển tốc độ Motor DC _ Cộng đồng Arduino Việt Nam_files/js__QERVh_Fzf6p9iHQYCmUr1O2jFHk11e-Q95akflX9HwI__JSeQmfvtfZjPwtnI4bIh5Z2ePRm2PQCEu653byvDXfU__gKKny14knGkPO1wqMaKVkqFnyCjZtD9XxPOoRYBAlpU.js"></script>
+
+
+<span style="height: 20px; width: 40px; position: absolute; opacity: 1; z-index: 8675309; display: none; cursor: pointer; border: none; top: 3188px; left: 179px; background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAoCAYAAABpYH0BAAAHjElEQVR4Ae1bBXAbvRLO0GNmpv+VmflnZmZmZi4zMzMzM4Y58ZwTz4SZnZzpjLWzBa38Zs8aO332pdy7ma9JPmml1XfSaqXacfgYjRIcPrwP9u7dqSMKHDq0D5hmiLi4vDwJEH6/H86dOxcFdAQCfq5ZQUEexOHM8/l8cPbsWR0xADVD7eJwSuqCaANqpwt4MQTU9uiPLuDFErC1tVUDdFw0AV0l5VA1dS4Y7n4SUv7VD+J/0QHif3YT/1168Dmonb8MfBbr9StgIBDQBE9DE+Q//zYX69QP/3NBJP6pO1TPXgwBvx9trwu0S0BblgFSOwwigRJ+1xnyn3wVqqfNh6aVG6Fu7mIofudzSL1poCCk6aX3wO/1XV8C4ikkFjgKSiD5b71IlIIX3oHTbDayR5ji/GEdVU+dK8zS0m8mYDvXPLQJyDLw7CH3khjlTAx8LmSDYtbOXEg28b/sAPb8Qir3ebxg3ncY5MTUiz5Ir80BTTv2UX+R4KyownraBcRjSbRo3LaHhDDc8Ri0BgKcd5lboOTL0ZDPZqOclBpmh/XSuwwj2+IPv+a81+2B3DsfI75+/VbkLwpczTKkdx+B7fKNzSblCeVl42dA8j/78PLaZWtjbl+TgManXqPBWk4mBXmvF7KH3U98CnOKCRNmW/zul1QnvdfNnDMfPkEcomzklIsmYOWMBULbTdv3Ik8+J/+9N5UpRSXaBfR6vVEj5d99sUMeA/3/4xp3H0ROgFJbF2ZbMW66uun8thPnbAaJ4mMKG5CztAL5i4LGDduov6w+t4FPUahMzjJQWep/B6EgMbdPAno8nqhx6sfBTrMH3k1c6feTwlIW1kGYbdk3E9U4+PMOyPF69uQMqF+8Gk43y2R3MYBxSt5zCJpWb4ZWl1AmzM6CF9/V0r42AZP/3CP4RgfcRVzozEIYH3kxom3Bqx+qb/3f/ThXtXAlSI+9xPAytJxIpLp2FtilJ14F6dGXoPCT78AqmcDI4mtqx8Ec+S+/D0pdwwV9Lfl6QrDtJ14BW1Ep5/JZGpVz+6NsJfUnX9I6D+WcxMKTJgHdbnfUyBn+QHAJ/rojOOobOGfef0QQsHbBioi2Wf3vFDYgxqHzxDEBqW7l3MWq2DcNYEu+c1iYMDz0XJt+Kk1mnOU0251sk7MyEck+AnKDPkULbQJWz1LTEdNbn3FOzsolDpe4s7I6zM5aXAanfqrmgpVs1lpNheqy/2M38DjV+sYnXxUHd/ODUP7VeBbLbicOd9a2/KzbskuwRc7O/Cr7gmUKT71OZXjcLPt8JIclMUWbgE6nM2p4HQ4ekPlO2n045yoox2Nct+HYeJid6d0vQuLff3nuVTl/GXHSwy+o9RVFSNSL3vqMck1bcoa6Ef2+c5t+Fryj9lf+7STOoV/YRtWUuVRW+PrHyCFwWcakBQmoKEpM8LHlYHrmDXSM/y09qaY2mBo4mmWhfgNb4vE/+68QtNEBSZ1lbGYvovpNKapIyX/thUkuldWG7KzZg+9p08eMPreGhgahzHDvU2reuW4LcpqgWUAcfCCYQOPfbBn0FWMTu4FpZstaLiyCEpasJvymkxrP/jOAX0IoDgfmi8RbDRK1XzZ5NvGm594W+i54T51ZpZ+PiuifpbwCQwmd0d0O9QU4rFZI/EMXCjeYbrVbQIfDoRnNBkm4UMD8LkKApnzLXVwanGWpmULizV4KtRk6Q+qWrRX6ywiGDw7zgWMRfapavl59mXc/IZQ1HDlJZRhP0RetY78oAlYuWK7GMTZw64nE0CMbxaoSFgNPt8gkVPm0+VRufPwVag9nT8KvO1CZrbhMLauqoY0Iz9NOiyWiT/mvfED2FSOnCGWYCtFxkvmEXLsFtNvtmmF87i11Z500BwXCKxlQciSQ9x0BR1oWtHr4sQ47JTvp6deF2xniX3qPePYiBJvaXQeoLKPXzW36lNlX3anrWMwkexaLQzOBavbyeRl7EebMnJjHTgJarVbNSOs0hBySU7OQQ1CsxJ+R7LIG3k12Eku8G1nMzHv9I+IQhW98LNhUhOSGiSyhrz8eDzVMVF6uAlMiqpfDLipq2Xm7YulqtBETfnYZ3HAqCQwsiY9ns95skGIae7sFtDQ20hvFkwVuDNHaSvc/g3YC8EysxlC+Qwo2dZt2Ih+G8oUrhXrGR1+KWA83Ddq4RODlL852bQJaLBZNMEt56i0KW4ax2MrH4zE2CsvVcugEJP6e75Bs5+4ItqoawUaxWjEpFs7TRW9+CoosC/W8DCUffsN2224hu39/MG/cCbb4FDyrE48XGHhXiSEm1vG3W8Bmo4kuD5Sa2phscWkHZAvfdFySCeMmcvgf1vj5E/yJbznMLoCpU7YB7EyIQIscceBoh5cSGHudBiO4C0rwZpxCSiuDkmXAfpHHBBvttAsoy7I2VFUHA/WC5dhgrPZoQ5tEDHZYH+3+b59YjnVR0Eg89asR2gVUHaFTBfHXPy6egAhcQtrtdQERuoAtLS06NEAX8GIJaDabdWgAFxA/ptrQUBejsQ7UDLXjHzLPzExjREOUxjpQK9SsoMAIcewf/jWHQ4e0fM1B/5rDebD10oZZukwlAAAAAElFTkSuQmCC&quot;); background-color: transparent; background-size: 40px 20px;"></span></body></html>

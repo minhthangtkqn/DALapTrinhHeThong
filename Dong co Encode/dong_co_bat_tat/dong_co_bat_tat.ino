@@ -1,5 +1,9 @@
+#define CHA 2
+long count=0;
 const int motor = 6;    // khai báo chân PWM điều khiển motor
-const int button = 8;   // khai báo chân đọc nút bấm
+const int button = 3;   // khai báo chân đọc nút bấm
+int BStatus = 0;
+
 boolean oldState = 0;   // trạng thái của nút bấm
 int time;               // biến lưu thời gian
 boolean state = 0;
@@ -9,28 +13,59 @@ void setup() {
   Serial.begin(9600);   // giao tiếp Serial với 9600 baudrate.
   pinMode(motor,OUTPUT);
   pinMode(button,INPUT);
+
+  while (!Serial);
+    attachInterrupt(0, encoder, RISING );
+    attachInterrupt(1, ChangeButtonStatus, RISING);
+    pinMode(CHA, INPUT);
 }
 
 void loop() {
-//  if (digitalRead(button) != oldState) {  // kiểm tra thay đổi trạng thái nút bấm
-//    time = millis();    // reset lại bộ timer khi nút bấm thay đổi trạng thái
+    delay(100);                     //thời gian delay để nhận tín hiệu nút bấm
+    if(BStatus == 1)
+    {
+        if(count >= 80)
+        {
+          count = 0;                //reset count
+          digitalWrite(motor, 0);   //tat dong co
+          delay(100);
+        }
+        else
+        {
+          analogWrite(motor, 50);
+        }
+        
+    }
+    else
+    {
+      digitalWrite(motor, 0);
+    }
+    Serial.print("BStatus: ");
+    Serial.println(BStatus);
+    Serial.println(count);
+    delay(1);
+    
+//  if(digitalRead(button) == 1)
+//  {
+//      analogWrite(motor, 40);
+//      Serial.println(count);   
 //  }
-//  
-//  state = digitalRead(button);      // đọc giá trị nút bấm
-//  int duration = millis() - time;   // đo thời gian duy trì trạng thái hiện tại
-//  duration = constrain(duration,0,5000);   // 0 <= duration <= 5000 ms.
-//  if (state == 1) {   //nếu đang nhấn nút
-//      speedMotor = map(duration,0,5000,0,255);
-//      analogWrite(motor,speedMotor);  // xuất xung PWM để điều khiển tốc độ motor
-//                                      // duty cycle càng lớn thì motor quay càng nhanh
-//       delay(500);
-//  }
-//  
-//  Serial.println(speedMotor);  // in ra Serial monitor giá trị tốc độ
-//  oldState = state;            // cập nhật trạng thái nút bấm.
-  if(digitalRead(button) == 1)
-    digitalWrite(motor, 1);
-  else
-    digitalWrite(motor, 0);
-  
+//  else
+//    digitalWrite(motor, 0);
+//  delay(1);
 }
+
+
+void encoder()
+  {
+      count+=1;
+      
+  }
+void ChangeButtonStatus()
+{
+      if(BStatus == 0)
+        BStatus = 1;
+      else
+        BStatus = 0;
+}
+
